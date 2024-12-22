@@ -215,9 +215,9 @@ components:
           x-field-extra-annotation: "@jakarta.validation.constraints.NotEmpty"
         email:
           type: string
-          description: The author's e-mail.
+          description: The author's e-mail
           format: email
-          example: guga@gmail.com.
+          example: guga@gmail.com
           minLength: 6  # Optional: minimum length for email
           maxLength: 30  # Optional: maximum length for email
         description:
