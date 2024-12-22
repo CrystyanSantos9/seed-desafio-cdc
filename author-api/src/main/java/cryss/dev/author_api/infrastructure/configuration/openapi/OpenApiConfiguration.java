@@ -1,4 +1,4 @@
-package cryss.dev.author_api.infrastructure.config.configuration;
+package cryss.dev.author_api.infrastructure.configuration.openapi;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;

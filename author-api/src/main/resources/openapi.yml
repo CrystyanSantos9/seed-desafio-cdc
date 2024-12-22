@@ -200,7 +200,7 @@ components:
           type: string
           description: author creation instant
           format: date-time
-          example: '2024-01-01T18:25:43.511Z'
+          example: '2024-12-22T18:03:39'
     NewAuthor:
       type: object
       required:

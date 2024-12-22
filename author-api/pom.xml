@@ -297,14 +297,13 @@
                 </executions>
                 <configuration>
                     <excludes>
-                        <exclude>**/domain/dto/**/*</exclude>
-                        <exclude>**/domain/enums/**/*</exclude>
-                        <exclude>**/utils/**/*</exclude>
+                        <exclude>**/domain/**/*</exclude>
+                        <exclude>**/infrastructure/**/*</exclude>
                         <exclude>**/*Controller.*</exclude>
                         <exclude>**/exception/*.**</exclude>
                         <exclude>**/configuration/**/*</exclude>
                         <exclude>**/*Application.*</exclude>
-                        <exclude>**/openapi/*/**</exclude>
+                        <exclude>**/*openapitools.*</exclude>
                         <exclude>**/domain/assembler/**/*.**</exclude>
                     </excludes>
                 </configuration>
