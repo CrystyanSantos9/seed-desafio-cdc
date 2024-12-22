@@ -1,5 +1,6 @@
 package cryss.dev.author_api.infrastructure.adaptadores.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -34,6 +35,7 @@ public class AuthorJPAEntity implements Serializable {
 
     @NotBlank
     @Size(min = 3, max = 400)
+    @Column(unique = true)
     private String email;
 
     private LocalDateTime createdAt ;
