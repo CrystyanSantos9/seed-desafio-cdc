@@ -1,5 +1,7 @@
 package cryss.dev.author_api.infrastructure.adaptadores.entities;
 
+import cryss.dev.author_api.infrastructure.adaptadores.validators.UniqueEmail;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.checkerframework.common.aliasing.qual.Unique;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -34,6 +37,7 @@ public class AuthorJPAEntity implements Serializable {
 
     @NotBlank
     @Size(min = 3, max = 400)
+    @Column(unique = true)
     private String email;
 
     private LocalDateTime createdAt ;

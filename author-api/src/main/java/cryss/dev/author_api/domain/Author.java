@@ -1,5 +1,6 @@
 package cryss.dev.author_api.domain;
 
+import cryss.dev.author_api.infrastructure.adaptadores.validators.UniqueEmail;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 public class Author implements Serializable {
 
     private Long id;
+
     private String name;
     private String description;
     private String email;

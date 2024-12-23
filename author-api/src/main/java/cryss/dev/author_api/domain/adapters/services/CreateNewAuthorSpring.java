@@ -7,9 +7,13 @@ import lombok.RequiredArgsConstructor;
 import org.openapitools.model.AuthorResponse;
 import org.openapitools.model.NewAuthor;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
+
+//import javax.validation.Valid;
 
 @Component
 @RequiredArgsConstructor
+@Validated
 public class CreateNewAuthorSpring implements CreateNewAuthor {
 
     private final  AuthorMapper mapper;

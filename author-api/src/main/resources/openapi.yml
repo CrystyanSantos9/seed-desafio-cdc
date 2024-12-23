@@ -218,6 +218,7 @@ components:
           description: The author's e-mail
           format: email
           example: guga@gmail.com
+          x-field-extra-annotation: "@cryss.dev.author_api.infrastructure.adaptadores.validators.UniqueEmail"
           minLength: 6  # Optional: minimum length for email
           maxLength: 30  # Optional: maximum length for email
         description:
