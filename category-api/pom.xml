@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.7</version>
+		<version>3.3.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cryss.dev</groupId>
@@ -15,13 +15,34 @@
 	<description>Projeto de desafio para criação de api de categoria</description>
 
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 		<openapi-generator.version>7.2.0</openapi-generator.version>
 		<openapi-generator-maven-plugin.version>7.7.0</openapi-generator-maven-plugin.version>
 		<springdoc.version>1.8.0</springdoc.version>
+		<lombok.version>1.18.30</lombok.version>
 	</properties>
 
 	<dependencies>
+
+<!--		<dependency>-->
+<!--			<groupId>jakarta.validation</groupId>-->
+<!--			<artifactId>jakarta.validation-api</artifactId>-->
+<!--			<version>3.0.0</version>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>jakarta.servlet</groupId>-->
+<!--			<artifactId>jakarta.servlet-api</artifactId>-->
+<!--			<version>5.0.0</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>jakarta.annotation</groupId>-->
+<!--			<artifactId>jakarta.annotation-api</artifactId>-->
+<!--			<version>3.0.0</version>-->
+<!--		</dependency>-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -64,7 +85,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.openapitools</groupId>
 			<artifactId>openapi-generator</artifactId>
@@ -97,12 +117,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<compilerVersion>21</compilerVersion>
+					<compilerVersion>${java.version}</compilerVersion>
 					<encoding>UTF-8</encoding>
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
 						</path>
 						<path>
 							<groupId>org.mapstruct</groupId>
@@ -127,7 +148,7 @@
 			<plugin>
 				<groupId>org.openapitools</groupId>
 				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>7.9.0</version>
+				<version>${openapi-generator-maven-plugin.version}</version>
 				<executions>
 					<execution>
 						<goals>
