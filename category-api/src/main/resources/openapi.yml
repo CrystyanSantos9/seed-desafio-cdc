@@ -194,6 +194,7 @@ components:
           example: '2024-12-22T18:03:39'
     NewCategory:
       type: object
+      x-class-extra-annotation: '@cryss.dev.category_api.infraestructure.adapters.validation.constraints.UniqueField'
       required:
         - name
       properties:
@@ -202,7 +203,6 @@ components:
           description: The category name.
           example: Informatica
           x-field-extra-annotation: "@jakarta.validation.constraints.NotEmpty"
-          x-constraints: "@cryss.dev.category_api.infraestructure.adapters.validation.constraints.NotDuplicate"
     InternalError:
       description: Entity representing error information that occurred in the backend.
       type: object
