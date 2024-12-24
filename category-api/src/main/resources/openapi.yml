@@ -202,7 +202,7 @@ components:
           description: The category name.
           example: Informatica
           x-field-extra-annotation: "@jakarta.validation.constraints.NotEmpty"
-          x-constraints: "@cryss.dev.infraestructure.adapters.validation.constraints.NotDuplicate"
+          x-constraints: "@cryss.dev.category_api.infraestructure.adapters.validation.constraints.NotDuplicate"
     InternalError:
       description: Entity representing error information that occurred in the backend.
       type: object

@@ -169,12 +169,17 @@
 								<serializableModel>true</serializableModel>
 								<delegatePattern>false</delegatePattern>
 								<useJakartaEe>true</useJakartaEe>
-<!--								<additionalModelTypeAnnotations>-->
-<!--									@lombok.Builder-->
-<!--									@lombok.NoArgsConstructor-->
-<!--									@lombok.AllArgsConstructor-->
-<!--									@com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY)-->
-<!--								</additionalModelTypeAnnotations>-->
+								<additionalModelTypeAnnotations>
+									@lombok.Builder
+									@lombok.NoArgsConstructor
+									@lombok.AllArgsConstructor
+									@com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY)
+								</additionalModelTypeAnnotations>
+								<generatedConstructorWithRequiredArgs>false</generatedConstructorWithRequiredArgs>
+								<useSpringBoot3>true</useSpringBoot3>
+								<performBeanValidation>true</performBeanValidation>
+<!--								<useOptional>true</useOptional>-->
+								<useSpringController>true</useSpringController>
 								<dateLibrary>java8-localdatetime</dateLibrary>
 							</configOptions>
 						</configuration>
