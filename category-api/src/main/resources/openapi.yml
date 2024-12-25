@@ -194,7 +194,7 @@ components:
           example: '2024-12-22T18:03:39'
     NewCategory:
       type: object
-      x-class-extra-annotation: "@cryss.dev.category_api.infraestructure.adapters.validation.constraints.UniqueField"
+      x-class-extra-annotation: '@cryss.dev.category_api.infraestructure.adapters.validation.constraints.UniqueFieldName(message="Fild name already in use")'
       required:
         - name
       properties:

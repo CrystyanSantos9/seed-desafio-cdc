@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RequiredArgsConstructor
-public class GenericUniqueFieldValidator implements ConstraintValidator<UniqueField, Object>, Serializable {
+public class GenericUniqueFieldValidator implements ConstraintValidator<UniqueFieldName, Object>, Serializable {
 
     private final List<UniqueFieldValidator> validators;
 

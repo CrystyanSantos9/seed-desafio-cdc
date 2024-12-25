@@ -13,8 +13,8 @@ import java.lang.annotation.Target;
 @Target({ ElementType.TYPE, ElementType.FIELD, ElementType.PARAMETER })
 @Constraint(validatedBy = GenericUniqueFieldValidator.class)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface UniqueField {
-    String message() default "{jakarta.validation.constraints.UniqueField.message}";
+public @interface UniqueFieldName {
+    String message() default "";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

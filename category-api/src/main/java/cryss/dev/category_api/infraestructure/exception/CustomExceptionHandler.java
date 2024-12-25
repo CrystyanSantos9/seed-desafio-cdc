@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -28,16 +29,21 @@ public class CustomExceptionHandler {
         BindingResult bindingResult = exMethod.getBindingResult();
 
         List<FieldError> fieldErrors = bindingResult.getFieldErrors();
+        List<ObjectError> objectErrors = bindingResult.getAllErrors ();
 
         List<String> fieldErrorDtos = fieldErrors.stream()
                 .map(f -> f.getField().concat(":").concat(f.getDefaultMessage())).map(String::new)
+                .toList();
+
+        List<String> objectErrorsDtos = objectErrors.stream()
+                .map(f -> f.getObjectName ().concat(":").concat(f.getDefaultMessage())).map(String::new)
                 .toList();
 
         BusinessException ex = BusinessException.builder()
                 .httpStatusCode(HttpStatus.BAD_REQUEST)
                 .message(CONSTRAINT_VALIDATION_FAILED)
                 .origin(ORIGIN)
-                .description(fieldErrorDtos.toString())
+                .description(objectErrorsDtos.toString())
                 .build();
 
         return ResponseEntity.status(ex.getHttpStatusCode()).body(ex.getOnlyBody());
