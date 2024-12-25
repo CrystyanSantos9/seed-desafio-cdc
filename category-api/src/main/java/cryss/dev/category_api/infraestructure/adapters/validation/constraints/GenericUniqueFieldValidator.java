@@ -16,7 +16,6 @@ public class GenericUniqueFieldValidator implements ConstraintValidator<UniqueFi
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        return validators.stream ()
-                .anyMatch (uniqueFieldValidator -> uniqueFieldValidator.isValid (value));
+        return false;
     }
 }
