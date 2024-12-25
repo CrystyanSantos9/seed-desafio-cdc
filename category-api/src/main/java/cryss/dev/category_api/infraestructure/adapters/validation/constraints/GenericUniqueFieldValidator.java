@@ -6,16 +6,18 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 
+import java.io.Serializable;
 import java.util.List;
 
 
 @RequiredArgsConstructor
-public class GenericUniqueFieldValidator implements ConstraintValidator<UniqueField, Object> {
+public class GenericUniqueFieldValidator implements ConstraintValidator<UniqueField, Object>, Serializable {
 
     private final List<UniqueFieldValidator> validators;
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        return false;
+        return validators.stream ()
+                .anyMatch (uniqueFieldValidator -> uniqueFieldValidator.isValid (value));
     }
 }

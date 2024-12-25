@@ -6,9 +6,11 @@ import lombok.RequiredArgsConstructor;
 import org.openapitools.model.NewCategory;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 @Component
 @RequiredArgsConstructor
-public class CategoryUniqueNameValidator implements UniqueFieldValidator {
+public class CategoryUniqueNameValidator implements UniqueFieldValidator, Serializable {
 
     private final CategoryRepositorySpringJPA repository;
 

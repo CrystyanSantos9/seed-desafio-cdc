@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Documented
-@Target({ ElementType.TYPE })
+@Target({ ElementType.TYPE, ElementType.FIELD, ElementType.PARAMETER })
 @Constraint(validatedBy = GenericUniqueFieldValidator.class)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface UniqueField {
