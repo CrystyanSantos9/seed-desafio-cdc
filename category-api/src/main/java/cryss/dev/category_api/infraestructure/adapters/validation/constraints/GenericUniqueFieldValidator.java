@@ -5,6 +5,7 @@ import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.Category
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.ObjectUtils;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,7 +18,11 @@ public class GenericUniqueFieldValidator implements ConstraintValidator<UniqueFi
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        return validators.stream ()
-                .anyMatch (uniqueFieldValidator -> uniqueFieldValidator.isValid (value));
+        var validator =  validators.stream ()
+                .filter(uniqueFieldValidator -> uniqueFieldValidator.accept (value))
+                .map (uniqueFieldValidator -> uniqueFieldValidator.isValid (value))
+                .toList ();
+
+        return ObjectUtils.isNotEmpty (validator) ? validator.get (0): Boolean.TRUE;
     }
 }
