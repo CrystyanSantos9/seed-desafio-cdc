@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class TitleIsUnique implements BookValidator {
+public class IsbnIsUnique implements BookValidator {
 
     private final BookRepository repository;
 
     @Override
     public void isValid(Book book) {
-        if(Boolean.TRUE.equals(repository.existsByTitle (book.getTitle ()))){
-            throw new BusinessException (HttpStatus.BAD_REQUEST,null,"Field value must be unique", "book title value already in use.", "MS-API");
+        if(repository.existsByIsbn (book.getIsbn ())){
+            throw new BusinessException (HttpStatus.BAD_REQUEST,null,"Field value must be unique", "book isbn value already in use.", "MS-API");
         }
     }
 }

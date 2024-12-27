@@ -21,4 +21,9 @@ public class BookRepositoryJPA implements BookRepository {
     public Boolean existsByTitle(String title) {
         return repository.existsByTitle (title);
     }
+
+    @Override
+    public Boolean existsByIsbn(String isbn) {
+        return repository.existsByIsbn (isbn);
+    }
 }

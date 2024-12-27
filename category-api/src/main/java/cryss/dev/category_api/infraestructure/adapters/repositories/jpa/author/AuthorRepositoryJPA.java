@@ -10,6 +10,8 @@ import lombok.extern.log4j.Log4j2;
 import org.apache.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 @Log4j2

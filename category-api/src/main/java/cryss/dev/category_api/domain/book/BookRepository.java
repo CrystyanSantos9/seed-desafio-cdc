@@ -10,4 +10,5 @@ public interface BookRepository {
 
     Boolean existsByTitle(String title);
 
+    Boolean existsByIsbn(String isbn);
 }

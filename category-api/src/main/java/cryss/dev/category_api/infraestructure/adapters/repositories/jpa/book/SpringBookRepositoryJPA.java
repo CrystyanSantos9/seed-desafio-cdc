@@ -11,4 +11,6 @@ public interface SpringBookRepositoryJPA extends JpaRepository<BookEntityJPA, Lo
     Optional<Boolean> findBookByTitle(Book book);
 
     Boolean existsByTitle(String title);
+
+    Boolean existsByIsbn(String isbn);
 }
