@@ -1,7 +1,7 @@
 package cryss.dev.category_api.infraestructure.mappers;
 
 import cryss.dev.category_api.domain.author.Author;
-import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.AuthorJPAEntity;
+import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.author.AuthorJPAEntity;
 import org.mapstruct.Mapper;
 import org.openapitools.model.AuthorResponse;
 import org.openapitools.model.NewAuthor;

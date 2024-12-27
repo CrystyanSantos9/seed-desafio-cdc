@@ -1,7 +1,7 @@
 package cryss.dev.category_api.infraestructure.mappers;
 
 import cryss.dev.category_api.domain.category.Category;
-import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.CategoryEntityJpa;
+import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.category.CategoryEntityJpa;
 import org.mapstruct.Mapper;
 import org.openapitools.model.CategoryResponse;
 import org.openapitools.model.NewCategory;

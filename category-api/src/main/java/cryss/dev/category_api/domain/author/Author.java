@@ -1,5 +1,7 @@
 package cryss.dev.category_api.domain.author;
 
+import org.checkerframework.common.aliasing.qual.Unique;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

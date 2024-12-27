@@ -1,15 +1,14 @@
-package cryss.dev.category_api.infraestructure.adapters.repositories.jpa;
+package cryss.dev.category_api.infraestructure.adapters.repositories.jpa.author;
 
 
 import cryss.dev.category_api.domain.author.Author;
 import cryss.dev.category_api.domain.author.AuthorRepository;
+import cryss.dev.category_api.infraestructure.exception.BusinessException;
 import cryss.dev.category_api.infraestructure.mappers.AuthorMapper;
-import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.apache.http.HttpStatus;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -27,6 +26,18 @@ public class AuthorRepositoryJPA implements AuthorRepository {
         var domain = mapper.toAuthor (result);
         log.info ("message={}, method={}, request={}","Creating a new Author", "create",  result .getId ());
         return domain ;
+    }
+
+    @Override
+    public Author findById(Long id) {
+        return mapper.toAuthor (repository.findById (id).orElseThrow (()->
+             BusinessException.builder ()
+                     .httpStatusCode (org.springframework.http.HttpStatus.BAD_REQUEST)
+                        .code (String.valueOf (HttpStatus.SC_BAD_REQUEST))
+                        .message ("Not found.")
+                        .description (String.format ("AuthorId=%s not found.", id))
+                        .build ()
+        ));
     }
 
 }

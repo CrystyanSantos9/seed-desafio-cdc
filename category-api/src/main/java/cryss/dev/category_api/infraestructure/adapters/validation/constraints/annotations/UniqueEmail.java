@@ -1,4 +1,4 @@
-package cryss.dev.category_api.infraestructure.adapters.validation.constraints;
+package cryss.dev.category_api.infraestructure.adapters.validation.constraints.annotations;
 
 
 import jakarta.validation.Constraint;

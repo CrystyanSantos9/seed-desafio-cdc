@@ -1,4 +1,4 @@
-package cryss.dev.category_api.infraestructure.adapters.repositories.jpa;
+package cryss.dev.category_api.infraestructure.adapters.repositories.jpa.category;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,7 +1,7 @@
-package cryss.dev.category_api.infraestructure.adapters.validation.constraints;
+package cryss.dev.category_api.infraestructure.adapters.validation.constraints.validators;
 
 import cryss.dev.category_api.domain.category.UniqueFieldValidator;
-import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.CategoryRepositorySpringJPA;
+import cryss.dev.category_api.infraestructure.adapters.validation.constraints.annotations.UniqueFieldName;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;

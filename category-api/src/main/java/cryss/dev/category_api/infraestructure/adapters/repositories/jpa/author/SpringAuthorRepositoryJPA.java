@@ -1,4 +1,4 @@
-package cryss.dev.category_api.infraestructure.adapters.repositories.jpa;
+package cryss.dev.category_api.infraestructure.adapters.repositories.jpa.author;
 
 import jakarta.validation.constraints.NotNull;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,10 +9,12 @@ import java.util.Optional;
 
 @Repository
 public interface SpringAuthorRepositoryJPA extends JpaRepository<AuthorJPAEntity, Long> {
-    @Query(value = "SELECT a FROM AuthorJPAEntity a WHERE a.email = ?1")
+    @Query(value = "SELECT a FROM AUTHORS a WHERE a.email = ?1")
     Optional<Boolean> findAuthorByEmail(String value);
 
-    @Query(value = "SELECT a FROM AuthorJPAEntity a WHERE a.name = ?1")
+    @Query(value = "SELECT a FROM AUTHORS a WHERE a.name = ?1")
     Optional<Boolean> findAuthorByName(@NotNull String name);
+
+    Optional<AuthorJPAEntity> findById(Long id);
 
 }

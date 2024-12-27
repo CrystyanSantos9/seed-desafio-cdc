@@ -17,6 +17,7 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @EqualsAndHashCode(callSuper = false)
 public class BusinessException extends RuntimeException implements Serializable {
+
     @JsonIgnore
     private final HttpStatus httpStatusCode;
 

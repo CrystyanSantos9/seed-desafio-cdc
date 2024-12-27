@@ -1,5 +1,6 @@
-package cryss.dev.category_api.infraestructure.adapters.validation.constraints;
+package cryss.dev.category_api.infraestructure.adapters.validation.constraints.annotations;
 
+import cryss.dev.category_api.infraestructure.adapters.validation.constraints.validators.CategoryNameDuplicateValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 

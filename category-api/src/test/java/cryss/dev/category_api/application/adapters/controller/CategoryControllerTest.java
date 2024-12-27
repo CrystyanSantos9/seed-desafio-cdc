@@ -2,8 +2,8 @@ package cryss.dev.category_api.application.adapters.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cryss.dev.category_api.domain.category.ServiceCategory;
-import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.CategoryRepositorySpringJPA;
-import cryss.dev.category_api.infraestructure.adapters.validation.constraints.CategoryNameDuplicateValidator;
+import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.category.CategoryRepositorySpringJPA;
+import cryss.dev.category_api.infraestructure.adapters.validation.constraints.validators.CategoryNameDuplicateValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;

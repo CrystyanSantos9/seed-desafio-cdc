@@ -1,4 +1,4 @@
-package cryss.dev.category_api.infraestructure.adapters.repositories.jpa;
+package cryss.dev.category_api.infraestructure.adapters.repositories.jpa.author;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,11 +16,12 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
+@Entity(name = "AUTHORS") //Isso altera o nome da classe lá nas queries do spring
 public class AuthorJPAEntity implements Serializable {
 
     @Id

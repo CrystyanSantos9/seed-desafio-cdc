@@ -1,7 +1,7 @@
-package cryss.dev.category_api.infraestructure.adapters.validation.constraints;
+package cryss.dev.category_api.infraestructure.adapters.validation.constraints.validators;
 
 import cryss.dev.category_api.domain.category.UniqueFieldValidator;
-import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.CategoryRepositorySpringJPA;
+import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.category.CategoryRepositorySpringJPA;
 import lombok.RequiredArgsConstructor;
 import org.openapitools.model.NewCategory;
 import org.springframework.stereotype.Component;
