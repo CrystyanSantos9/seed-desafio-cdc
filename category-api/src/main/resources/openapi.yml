@@ -50,6 +50,37 @@ paths:
           $ref: '#/components/responses/ServiceUnavailableError'
         504:
           $ref: '#/components/responses/GatewayTimeoutError'
+    get:
+      tags:
+        - Books
+      summary: List all books.
+      description: Returns a list of avaiable books.
+      operationId: listAllBooks
+      responses:
+        200:
+          $ref: '#/components/responses/ListAvaiableBooks'
+        400:
+          $ref: '#/components/responses/BadRequest'
+        401:
+          $ref: '#/components/responses/Unauthorized'
+        403:
+          $ref: '#/components/responses/Forbidden'
+        413:
+          $ref: '#/components/responses/ContentTooLarge'
+        415:
+          $ref: '#/components/responses/UnsupportedMediaType'
+        422:
+          $ref: '#/components/responses/UnprocessableContent'
+        429:
+          $ref: '#/components/responses/TooManyRequests'
+        500:
+          $ref: '#/components/responses/InternalServerError'
+        502:
+          $ref: '#/components/responses/BadGatewayError'
+        503:
+          $ref: '#/components/responses/ServiceUnavailableError'
+        504:
+          $ref: '#/components/responses/GatewayTimeoutError'
   /categories:
     post:
       tags:
@@ -148,6 +179,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/CategoryResponse'
+    ListAvaiableBooks:
+      description: Shows detailed informations of a new category created.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ListAvaiableBooksResponse'
     BadRequest:
       description: Invalid Request
       content:
@@ -479,6 +516,30 @@ components:
           description: author creation instant
           format: date-time
           example: '2024-12-22T18:03:39'
+    ListAvaiableBooksResponse:
+      type: object
+      properties:
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/AvaiableBooksResponse'
+          example:
+            - id: 1
+              title: "Harry Potter e a Pedra Filosofal"
+            - id: 2
+              first_name: "Harry Potter e a Ordem da Fenix"
+    AvaiableBooksResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          example: 1
+          description: Book's id.
+        title:
+          type: string
+          description: Book's title
+          example: "Harry Potter e a Pedra Filosofal"
     NewCategory:
       type: object
       x-class-extra-annotation: '@cryss.dev.category_api.infraestructure.adapters.validation.constraints.annotations.UniqueFieldName(message="Fild name already in use")'

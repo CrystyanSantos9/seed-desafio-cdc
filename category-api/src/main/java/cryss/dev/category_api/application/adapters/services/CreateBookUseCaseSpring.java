@@ -1,7 +1,7 @@
 package cryss.dev.category_api.application.adapters.services;
 
 
-import cryss.dev.category_api.domain.author.CreateNewAuthor;
+import cryss.dev.category_api.domain.author.CreateBookUseCase;
 import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.author.AuthorRepositoryJPA;
 import cryss.dev.category_api.infraestructure.mappers.AuthorMapper;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +15,7 @@ import org.springframework.validation.annotation.Validated;
 @Component
 @RequiredArgsConstructor
 @Validated
-public class CreateNewAuthorSpring implements CreateNewAuthor {
+public class CreateBookUseCaseSpring implements CreateBookUseCase {
 
     private final AuthorMapper mapper;
     private final AuthorRepositoryJPA repository;

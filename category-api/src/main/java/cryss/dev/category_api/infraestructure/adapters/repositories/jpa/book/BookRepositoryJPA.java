@@ -4,6 +4,7 @@ import cryss.dev.category_api.domain.book.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -25,5 +26,10 @@ public class BookRepositoryJPA implements BookRepository {
     @Override
     public Boolean existsByIsbn(String isbn) {
         return repository.existsByIsbn (isbn);
+    }
+
+    @Override
+    public List<BookEntityJPA> listAllAvaiableBooks() {
+        return repository.findAll ();
     }
 }

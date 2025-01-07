@@ -1,6 +1,6 @@
 package cryss.dev.category_api.application.adapters.controller;
 
-import cryss.dev.category_api.domain.author.CreateNewAuthor;
+import cryss.dev.category_api.domain.author.CreateBookUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.openapitools.api.AuthorsApi;
@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public class AuthorController implements AuthorsApi {
 
-    private final CreateNewAuthor createNewAuthor;
+    private final CreateBookUseCase createBookUseCase;
 
     @Override
     public ResponseEntity<AuthorResponse> createNewAuthor(NewAuthor newAuthor) {
         log.info ("message={}, method={}, request={}","Creating a new Author", "create", newAuthor );
-        return ResponseEntity.ok (createNewAuthor.create (newAuthor ));
+        return ResponseEntity.ok (createBookUseCase.create (newAuthor ));
     }
 }
 

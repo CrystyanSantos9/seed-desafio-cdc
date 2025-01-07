@@ -2,7 +2,7 @@ package cryss.dev.category_api.domain.book;
 
 import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.book.BookEntityJPA;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface BookRepository {
 
@@ -11,4 +11,6 @@ public interface BookRepository {
     Boolean existsByTitle(String title);
 
     Boolean existsByIsbn(String isbn);
+
+    List<BookEntityJPA> listAllAvaiableBooks();
 }

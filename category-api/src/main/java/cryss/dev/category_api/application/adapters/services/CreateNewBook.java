@@ -4,7 +4,7 @@ import cryss.dev.category_api.domain.author.Author;
 import cryss.dev.category_api.domain.author.AuthorRepository;
 import cryss.dev.category_api.domain.book.BookRepository;
 import cryss.dev.category_api.domain.book.BookValidator;
-import cryss.dev.category_api.domain.book.ServiceBook;
+import cryss.dev.category_api.domain.book.CreateBookUseCase;
 import cryss.dev.category_api.domain.category.CategoryRepository;
 import cryss.dev.category_api.infraestructure.adapters.repositories.jpa.category.CategoryEntityJpa;
 import cryss.dev.category_api.infraestructure.mappers.AuthorMapper;
@@ -12,7 +12,9 @@ import cryss.dev.category_api.infraestructure.mappers.BookMapper;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.openapitools.model.BookResponse;
+import org.openapitools.model.ListAvaiableBooksResponse;
 import org.openapitools.model.NewBook;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,7 +23,7 @@ import java.util.concurrent.CompletableFuture;
 @Component
 @RequiredArgsConstructor
 
-public class CreateNewBook implements ServiceBook {
+public class CreateNewBook implements CreateBookUseCase {
 
     private final BookMapper mapper;
     private final BookRepository repository;
@@ -59,4 +61,5 @@ public class CreateNewBook implements ServiceBook {
 
         return mapper.toNewBookDTO(response);
     }
+
 }
