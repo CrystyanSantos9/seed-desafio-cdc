@@ -5,6 +5,7 @@ import cryss.dev.category_api.domain.book.CreateBookUseCase;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.openapitools.api.BooksApi;
+import org.openapitools.model.BookDetailsResponse;
 import org.openapitools.model.BookResponse;
 import org.openapitools.model.ListAvaiableBooksResponse;
 import org.openapitools.model.NewBook;
@@ -32,6 +33,11 @@ public class BookController implements BooksApi {
     @Override
     public ResponseEntity<ListAvaiableBooksResponse> listAllBooks() {
         return  ResponseEntity.ok (listAllAvaiableBooksUseCase.listAllBooks ());
+    }
+
+    @Override
+    public ResponseEntity<BookDetailsResponse> getBookDetails(Integer bookId) {
+        return BooksApi.super.getBookDetails (bookId);
     }
 }
 

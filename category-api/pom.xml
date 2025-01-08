@@ -67,11 +67,7 @@
 			<optional>true</optional>
 		</dependency>
 
-		<dependency>
-			<groupId>org.openapitools</groupId>
-			<artifactId>jackson-databind-nullable</artifactId>
-			<version>0.2.6</version>
-		</dependency>
+
 
 		<dependency>
 			<groupId>org.mapstruct</groupId>
@@ -97,17 +93,48 @@
 			</exclusions>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>org.springdoc</groupId>-->
-<!--			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
-<!--			<version>2.7.0</version>-->
-<!--		</dependency>-->
-
 		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>${springdoc.version}</version>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.3.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.6.14</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openapitools</groupId>
+			<artifactId>jackson-databind-nullable</artifactId>
+			<version>0.2.6</version>
+		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.springdoc</groupId>-->
+<!--			<artifactId>springdoc-openapi-ui</artifactId>-->
+<!--			<version>${springdoc.version}</version>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>org.springdoc</groupId>-->
+<!--			<artifactId>springdoc-openapi-webmvc-core</artifactId>-->
+<!--			<version>1.8.0</version>-->
+<!--		</dependency>-->
+
 
 	</dependencies>
 
@@ -169,6 +196,7 @@
 								<serializableModel>true</serializableModel>
 								<delegatePattern>false</delegatePattern>
 								<useJakartaEe>true</useJakartaEe>
+								<interfaceOnly>true</interfaceOnly>
 								<additionalModelTypeAnnotations>
 									@lombok.Builder
 									@lombok.NoArgsConstructor
@@ -176,7 +204,8 @@
 									@com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY)
 								</additionalModelTypeAnnotations>
 								<generatedConstructorWithRequiredArgs>false</generatedConstructorWithRequiredArgs>
-								<useSpringBoot3>true</useSpringBoot3>
+<!--								<useSpringBoot3>true</useSpringBoot3>-->
+								<useJakartaEe>true</useJakartaEe>
 								<performBeanValidation>true</performBeanValidation>
 <!--								<useOptional>true</useOptional>-->
 								<useSpringController>true</useSpringController>
@@ -188,5 +217,12 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>maven_central</id>
+			<name>Maven Central</name>
+			<url>https://repo.maven.apache.org/maven2/</url>
+		</repository>
+	</repositories>
 
 </project>
